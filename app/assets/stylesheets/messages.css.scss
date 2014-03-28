@@ -63,10 +63,14 @@ section {
 }
 
 @media (max-width: 1040px) {
-
   section.sidebar {
     position: static;
     padding-right: 5px;
     width: 97%;
   }
+}
+
+.message-count {
+  font-size: 85%;
+  opacity: .8;
 }

@@ -5,7 +5,7 @@
     <li>
       <span class="week-number"><%= index + 1 %>: </span>
       <span class="topic"><%= link_to topic, { week: index + 1 } %> </span>
-      <span class="message-count">(<%= @message_counts[index].qty %> links)</span>
+      <span class="message-count">(<%= @message_counts[index].qty %> messages)</span>
     </li>
   <% end %>
 </ul>
