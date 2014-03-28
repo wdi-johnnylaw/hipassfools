@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : 'WDI - HipChat Messages' %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <section class="right small-12 medium-12 large-4 sidebar">
+      <%= render 'shared/table_of_contents' %>
+    </section>
+
+    <section class="small-12 medium-12 large-8 main">
+      <%= yield %>
+    </section>
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
+
+
+
+</html>
