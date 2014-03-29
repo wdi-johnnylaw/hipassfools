@@ -77,7 +77,15 @@ section {
   }
 }
 
-.message-count {
+.weak {
   font-size: 85%;
   opacity: .8;
+}
+
+ul {
+  &.by-week {
+    .message-date {
+      display: none;
+    }
+  }
 }

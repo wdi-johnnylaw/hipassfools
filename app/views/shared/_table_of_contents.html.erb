@@ -4,8 +4,8 @@
   <% WEEK_TOPICS.each_with_index do |topic, index| %>
     <li class="<%= 'selected' if @week == index %>">
       <span class="week-number"><%= index + 1 %>: </span>
-      <span class="topic"><%= link_to topic, { week: index + 1 } %> </span>
-      <span class="message-count">(<%= @message_counts[index].qty %> messages)</span>
+      <span class="topic"><%= link_to topic, root_path(week: index + 1) %> </span>
+      <span class="message-count weak">(<%= @message_counts[index].qty %> messages)</span>
     </li>
   <% end %>
 </ul>

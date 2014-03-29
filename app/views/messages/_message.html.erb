@@ -1,0 +1,7 @@
+<li class="<%= cycle 'odd', 'even' %>">
+  <span class="name large-3 small-3 medium-3"><%= link_to message.author, author_path(message.author) %></span>
+  <span class="message-body large-7 medium-7 small-7">
+    <%= linkify message.body %>
+    <span class="message-date weak"> (<%= message.date %>)</span>
+  </span>
+</li>
