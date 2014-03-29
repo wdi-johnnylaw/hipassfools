@@ -1,6 +1,6 @@
-<% if params[:week] %>
+<% if @week %>
 
-  <h1>Week <%= params[:week] %> - <%= WEEK_TOPICS[params[:week].to_i - 1]%></h1>
+  <h1>Week <%= @week + 1 %> - <%= WEEK_TOPICS[@week]%></h1>
 
   <ul>
     <% @messages.each do |message| %>
