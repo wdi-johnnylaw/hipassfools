@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-HipchatLinks::Application.config.secret_key_base = 'a4ab48924bf4ae88493c6f4e4494f612356ea2428f0d1bcc76f72ef71264af15e99823bd315caa01f836420f4a5b3b080a2b2564fd5d043be60a7dbb8fc62f6a'
+HipchatLinks::Application.config.secret_key_base = ENV['RAILS_SECRET_KEY_BASE']
