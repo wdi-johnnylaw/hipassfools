@@ -5,4 +5,8 @@ class TagsController < ApplicationController
       format.json { render json: @tags }
     end
   end
+
+  def show
+    @tag = Tag.find_by("name ILIKE ?", params[:name] || params[:id])
+  end
 end

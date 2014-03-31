@@ -1,7 +1,8 @@
 HipchatLinks::Application.routes.draw do
   devise_for :users
   resources :authors, only: :show
-  resources :tags, only: :index
+  resources :tags, only: [:index, :show]
+  get 'search', to: 'tags#show'
   resources :taggings, only: :create
 
   root to: 'messages#index'

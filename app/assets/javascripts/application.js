@@ -45,3 +45,10 @@ $(function() {
       }
    });
 });
+
+$(document).on('click', 'span.tag span', function() {
+    var tag = $(this).html().replace(/&nbsp;/g, '');
+    window.location.href = '/tags/' + tag;
+});
+
+$('#search').autocomplete({ source: "/tags" });
