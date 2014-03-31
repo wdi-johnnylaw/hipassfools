@@ -23,6 +23,9 @@
 
 
     <%= javascript_include_tag "application" %>
+    <script>
+      window.currentUser = <%= current_user.try(:name).to_json.html_safe %>;
+    </script>
   </body>
 
 

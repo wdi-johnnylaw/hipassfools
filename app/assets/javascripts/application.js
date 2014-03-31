@@ -12,8 +12,36 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require jquery.tagsinput
 //= require foundation
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$(function() {
+   $('input.tags').tagsInput({
+      autocomplete_url: '/tags.json',
+      height: 'auto',
+      width: 'auto',
+      onRemoveTag: function(tag) {
+         $(this).addTag(tag);
+      },
+      onAddTag: function(tag) {
+         if(window.currentUser) {
+            $.ajax({
+               url: '/taggings.json',
+               type: 'post',
+               data: {
+                  tagging: {
+                     tag_name: tag,
+                     message_id: $(this).prop('id').replace(/^msg/, '')
+                  }
+               }
+            });
+         }
+      }
+   });
+});

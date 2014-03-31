@@ -72,7 +72,7 @@ section {
 
 @media (max-width: 1040px) {
   section.sidebar {
-    position: static;
+    position: relative;
     padding-right: 5px;
     width: 97%;
   }

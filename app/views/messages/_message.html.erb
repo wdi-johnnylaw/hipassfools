@@ -8,6 +8,7 @@
   <% end %>
   <span class="message-body large-7 medium-7 small-7">
     <%= linkify message.body %>
+    <input class="tags" id="msg<%= message.id %>" value="<%= message.tags.pluck(:name).join(',') %>" />
     <span class="message-date weak"> (<%= message.time.strftime('%Y-%m-%d') %>)</span>
   </span>
 </li>

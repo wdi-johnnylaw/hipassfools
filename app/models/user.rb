@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates :invite, presence: true, uniqueness: true
 
+  delegate :name, to: :invite
+
   def invitation_code=(code)
     self.invite = Invite.find_by(code: code)
   end
