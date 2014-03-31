@@ -1,5 +1,5 @@
 <li class="<%= cycle 'odd', 'even' %>">
-  <% if current_user %>
+  <% if user_signed_in? %>
     <span class="name large-3 small-3 medium-3"><%= link_to message.author, author_path(message.author) %></span>
   <% else %>
     <span class="blur name large-3 small-3 medium-3" title="Log in to access messages by names.">

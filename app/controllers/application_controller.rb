@@ -6,6 +6,11 @@ class ApplicationController < ActionController::Base
   before_action :load_message_counts
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def redirect_path
+    @redirect_path ||= params[:redirect] || request.fullpath
+  end
+  helper_method :redirect_path
+
   protected
 
   def configure_permitted_parameters
@@ -22,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   def login_required
     unless user_signed_in?
-      redirect_to new_user_session_path(redirect: params[:redirect] || request.fullpath)
+      redirect_to new_user_session_path(redirect: redirect_path)
     end
   end
 end

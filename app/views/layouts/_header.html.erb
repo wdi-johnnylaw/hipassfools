@@ -8,7 +8,7 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <% if current_user %>
+      <% if user_signed_in? %>
         <li class="padding-right">Logged in as <%= current_user.invite.name %></li>
         <li class="padding-right"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
       <% elsif !devise_controller? %>

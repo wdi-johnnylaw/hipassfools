@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :invitation_code, value: params[:invitation_code] %>
   <% if params[:redirect] %>
-    <%= f.hidden_field :redirect, value: params[:redirect] %>
+    <%= hidden_field_tag :redirect, params[:redirect] %>
   <% end %>
 
   <div><%= f.label :email %><br />
