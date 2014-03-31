@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_reader :invitation_code
   belongs_to :invite
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
