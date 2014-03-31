@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 201403300611012) do
+ActiveRecord::Schema.define(version: 20140331091743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,28 @@ ActiveRecord::Schema.define(version: 201403300611012) do
     t.integer  "week"
     t.text     "body"
   end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tag_id"
+    t.integer  "message_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taggings", ["message_id"], name: "index_taggings_on_message_id", using: :btree
+  add_index "taggings", ["tag_id", "message_id"], name: "index_taggings_on_tag_id_and_message_id", unique: true, using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["user_id"], name: "index_taggings_on_user_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "invite_id"
