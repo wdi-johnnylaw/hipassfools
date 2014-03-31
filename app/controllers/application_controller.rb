@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    param[:redirect] || super
+    params[:redirect] || super
+  end
+
+  def login_required
+    unless user_signed_in?
+      redirect_to new_user_session_path(redirect: params[:redirect] || request.fullpath)
+    end
   end
 end
