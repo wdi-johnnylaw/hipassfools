@@ -8,8 +8,45 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require foundation_and_overrides
-
  *= require_tree .
+ *= require_self
  */
+
+nav.top-bar {
+  position: fixed;
+  width: 100%;
+  height: 46px;
+  top: 0;
+  z-index: 2;
+}
+
+section.main {
+  position: relative;
+  top: 46px;
+}
+
+section.sidebar {
+  overflow: scroll;
+  max-height: 90%;
+}
+
+section.sidebar li {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+nav section.top-bar-section ul.right li {
+  color: white;
+/*  padding-right: 30px;*/
+  height: 46px;
+}
+
+.blur {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: url(/assets/blur.svg#blur);
+}

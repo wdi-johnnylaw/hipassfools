@@ -1,4 +1,5 @@
 HipchatLinks::Application.routes.draw do
+  devise_for :users
   resources :authors, only: :show
 
   root to: 'messages#index'
