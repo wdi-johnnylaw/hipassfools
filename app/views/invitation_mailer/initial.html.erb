@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @invite.first_name %>!</p>
+
+    <p>As you may recall, the instructors created an app for you to see all the links that your class ever posted. Because we want to make the site a little more feature-rich for you and protect you from peering eyes, we are requiring authentication for access to some of the site's areas (The public can no longer see the names of the authors of the posts, for example), so please go to <%= link_to new_user_registration_url(invitation_code: @invite.code, only_path: false),  new_user_registration_url(invitation_code: @invite.code, only_path: false) %> and create your account.</p>
+
+    <p>Once logged in, you will be able to do a few other things as well, such as:
+      <ul>
+        <li>Tag links</li>
+        <li>Search for links by tag (The more that links have been tagged, the more useful this feature will be, so tag away!)</li>
+        <li>Create a favorites section, so that you can easily find your way back to links that you found particularly useful.</li>
+        <li>Vote for helpful links and see what links others have found most useful.</li>
+      </ul>
+    </p>
+
+    <p>Enjoy!<br />The Team</p>
+  </body>
+</html>
