@@ -12,10 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.autocomplete
 //= require jquery.tagsinput
 //= require foundation
-//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -26,8 +25,10 @@ $(function() {
       autocomplete_url: '/tags.json',
       height: 'auto',
       width: 'auto',
+      interactive: !!currentUser,
+      removeWithBackspace: false,
       onRemoveTag: function(tag) {
-         $(this).addTag(tag);
+         $(this).addTag(tag, 'asdf');
       },
       onAddTag: function(tag) {
          if(window.currentUser) {
@@ -44,6 +45,10 @@ $(function() {
          }
       }
    });
+});
+
+$(function() {
+   $('#search').select();
 });
 
 $(document).on('click', 'span.tag span', function() {

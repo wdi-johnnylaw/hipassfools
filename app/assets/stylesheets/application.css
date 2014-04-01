@@ -53,6 +53,30 @@ nav section.top-bar-section ul.right li {
   filter: url(/assets/blur.svg#blur);
 }
 
+div.tagsinput {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, .3);
+  background: none;
+}
+
+div.tagsinput span.tag {
+  height: 20px;
+  font-size: 11px;
+  padding: 1px 4px;
+  margin-bottom: 0;
+  border-radius: 5px;
+}
+
+div.tagsinput input {
+  margin-bottom: 0;
+  padding: 0;
+}
+
 span.tag span {
   cursor: pointer;
+}
+
+#search-form {
+  width: 300px;
 }
