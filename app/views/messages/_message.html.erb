@@ -8,7 +8,7 @@
 
   <% else %>
 
-    <span class="blur name large-3 small-3 medium-3" title="Log in to access messages by names.">
+    <span class="blur name large-3 small-3 medium-3 columns" title="Log in to access messages by names.">
       <%= link_to Faker::Name.name, '#' %>
     </span>
 
@@ -19,13 +19,13 @@
     <input class="tags" id="msg<%= message.id %>" value="<%= message.tags.pluck(:name).join(',') %>" />
   </span>
 
-  <% if user_signed_in? %>
-    <span class="large-2 medium-2 small-2">
+  <span class="large-2 medium-2 small-2">
+    <% if user_signed_in? %>
       <% if current_user.favorite_message_ids.include?(message.id) %>
         <%= link_to 'Remove favorite', favorite_path(message, redirect: request.fullpath), method: :delete, class: 'favorites-link' %>
       <% else %>
         <%= link_to 'Add to favorites', favorites_path(favorite: { message_id: message.id }), method: :post, remote: true, class: 'favorites-link', onclick: "this.style.color='gray'; this.style.cursor='text'" %>
       <% end %>
-    </span>
-  <% end %>
+    <% end %>
+  </span>
 </li>
