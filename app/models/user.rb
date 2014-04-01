@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def invitation_code=(code)
     self.invite = Invite.find_by(code: code)
   end
+
+  def messages
+    Message.where(author: name)
+  end
 end

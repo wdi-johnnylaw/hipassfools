@@ -1,3 +1,8 @@
 <ul>
-  <%= render @tag.messages %>
+  <%= render @messages_by_author if @messages_by_author %>
+  <%= render @messages_by_tag if @messages_by_tag %>
 </ul>
+
+<% if @messages_by_author.empty? && @messages_by_tag.empty? %>
+  <h2>No results</h2>
+<% end %>
