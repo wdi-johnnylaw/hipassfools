@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 
   delegate :name, to: :invite
 
+  has_many :favorites
+  has_many :favorite_messages, through: :favorites, source: :message
+
   def invitation_code=(code)
     self.invite = Invite.find_by(code: code)
   end

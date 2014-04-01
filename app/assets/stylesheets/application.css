@@ -38,7 +38,7 @@ section.sidebar li {
   padding-bottom: 0;
 }
 
-nav section.top-bar-section ul.right li {
+nav section.top-bar-section ul li {
   color: white;
 /*  padding-right: 30px;*/
   height: 46px;
@@ -79,4 +79,8 @@ span.tag span {
 
 #search-form {
   width: 300px;
+}
+
+a.favorites-link {
+  font-size: 80%;
 }

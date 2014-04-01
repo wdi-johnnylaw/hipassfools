@@ -6,6 +6,12 @@
   </ul>
 
   <section class="top-bar-section">
+    <ul>
+      <li><%= link_to 'Favorites', favorites_path %></li>
+    </ul>
+  </section>
+
+  <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
       <% unless devise_controller? %>
