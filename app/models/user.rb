@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :favorite_messages, through: :favorites, source: :message
 
   def invitation_code=(code)
+    @invitation_code = code
     self.invite = Invite.find_by(code: code)
   end
 
